@@ -75,9 +75,7 @@ let budgetController = (function() {
         deleteItem: function(type, id){
             let ids, index;
             
-            ids = data.allItems[type].map(function(current){
-                return current.id;
-            });
+            ids = data.allItems[type].map(current => current.id);
             
             index = ids.indexOf(id);
             
@@ -110,9 +108,7 @@ let budgetController = (function() {
         },
         
         getPercentages: function(){
-            let allPerc = data.allItems.exp.map(function(cur){
-                return cur.getPercentage();    
-            }); 
+            let allPerc = data.allItems.exp.map(cur => cur.getPercentage()); 
             return allPerc;
         },
         
@@ -124,10 +120,6 @@ let budgetController = (function() {
                 percentage: data.percentage
             };
         },
-        
-        testing: function(){
-            console.log(data);
-        }
     }
     
 })();
